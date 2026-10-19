@@ -132,7 +132,7 @@ export default defineConfig(({ mode }) => {
       rolldownOptions: {
         output: {
           codeSplitting: false,
-          extends: true,
+          extend: true,
           postBanner: createBanner(packageInfo, process.env.LIB_NAME),
           comments: false,
           ...outputOptions,
