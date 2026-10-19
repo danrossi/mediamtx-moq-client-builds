@@ -1,6 +1,6 @@
 export {};
 
-declare module '@mediamtx/moq' {
+declare module '@mediamtx/moq/reader' {
   /**
    * @callback OnError
    * @param {string} err - error.
