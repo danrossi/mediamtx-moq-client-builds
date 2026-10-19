@@ -1,0 +1,5 @@
+# Handle text files automatically by default
+* text=auto
+
+# Enforce Unix (LF) line endings for all shell scripts on checkout
+*.sh text eol=lf
