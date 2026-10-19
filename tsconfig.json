@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "esnext",
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./types",
+    "rootDir": "./src",
+    "stripInternal": true,
+    "paths": {
+      "@mediamtx/moq/*": ["./mediamtx/internal/servers/moq/"]
+    }
+  },
+  "include": ["./src/**/*.js"],
+  "exclude": ["./node_modules"]
+}
