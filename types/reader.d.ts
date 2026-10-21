@@ -2,12 +2,14 @@ export {};
 
 declare module '@mediamtx/moq/reader' {
   /**
+   * The error detail object
    * @typedef {Object} ErrorDetail
    * @property {string} code - The error code.
    * @property {string} message - The error message.
    */
 
   /**
+   * The base catalog track
    * @typedef {Object} CatalogTrack
    * @property {string} name - The track name.
    * @property {string} packaging - The track packaging.
@@ -17,6 +19,7 @@ declare module '@mediamtx/moq/reader' {
    */
 
   /**
+   * The video catalog track
    * @typedef {Object} VideoCatalogTrack
    * @property {string} name - The track name.
    * @property {string} packaging - The track packaging.
@@ -25,12 +28,20 @@ declare module '@mediamtx/moq/reader' {
    */
 
   /**
+   * The audio catalog track
    * @typedef {Object} AudioCatalogTrack
    * @property {string} name - The track name.
    * @property {string} packaging - The track packaging.
    * @property {boolean} isLive - Track live.
    * @property {string} codec - The track codec.
    * @property {number} samplerate - The track audio samplerate.
+   */
+
+  /**
+   * The catalog data
+   * @typedef {Object} Catalog
+   * @property {number} version - The catalog version.
+   * @property {(VideoCatalogTrack | AudioCatalogTrack)[]} tracks - The video or audio catalog tracks.
    */
 
   /**
@@ -160,6 +171,11 @@ declare module '@mediamtx/moq/reader' {
   export interface ErrorDetail {
     code: number;
     message: string;
+  }
+
+  export interface Catalog {
+    version: number;
+    tracks: (VideoCatalogTrack | AudioCatalogTrack)[];
   }
 
   export interface CatalogTrack {
