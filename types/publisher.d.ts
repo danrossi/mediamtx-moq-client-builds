@@ -43,10 +43,15 @@ declare module '@mediamtx/moq/publisher' {
     on(eventName: string, callback: EventListenerOrEventListenerObject): void;
   }
 
+  export interface ErrorDetail {
+    code: number;
+    message: string;
+  }
+
   /**
    * Publishe error codes
    */
-  const PublishErrorCodes: {
+  export const PublishErrorCodes: {
     PUBLISH_ERROR: number;
     CONNECTION: number;
     TRANSPORT: number;

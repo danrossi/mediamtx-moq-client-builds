@@ -132,6 +132,50 @@ declare module '@mediamtx/moq/reader' {
   }
 
   /**
+   * @typedef {Object} CatalogTrack
+   * @property {string} name - The track name.
+   * @property {string} packaging - The track packaging.
+   * @property {boolean} isLive - Track live.
+   * @property {string} codec - The track codec.
+   * @property {number} samplerate - The track audio samplerate.
+   */
+
+  /**
+   * @typedef {Object} VideoCatalogTrack
+   * @property {string} name - The track name.
+   * @property {string} packaging - The track packaging.
+   * @property {boolean} isLive - Track live.
+   * @property {string} codec - The track codec.
+   */
+
+  /**
+   * @typedef {Object} AudioCatalogTrack
+   * @property {string} name - The track name.
+   * @property {string} packaging - The track packaging.
+   * @property {boolean} isLive - Track live.
+   * @property {string} codec - The track codec.
+   * @property {number} samplerate - The track audio samplerate.
+   */
+
+  export interface ErrorDetail {
+    code: number;
+    message: string;
+  }
+
+  export interface CatalogTrack {
+    name: string;
+    packaging: string;
+    isLive: boolean;
+    codec: string;
+  }
+
+  export type VideoCatalogTrack = CatalogTrack;
+
+  export interface AudioCatalogTrack extends CatalogTrack {
+    samplerate: number;
+  }
+
+  /**
    * Reader error codes
    */
   export const ReaderErrorCodes: {
