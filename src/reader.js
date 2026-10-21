@@ -1,1 +1,1 @@
-export { MediaMTXMoQReader } from '@mediamtx/moq/reader';
+export { MediaMTXMoQReader, ReaderErrorCodes } from '@mediamtx/moq/reader';

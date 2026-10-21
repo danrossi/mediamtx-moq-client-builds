@@ -1,1 +1,4 @@
-export { MediaMTXMoQPublisher } from '@mediamtx/moq/publisher';
+export {
+  MediaMTXMoQPublisher,
+  PublishErrorCodes,
+} from '@mediamtx/moq/publisher';

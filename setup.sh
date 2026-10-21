@@ -5,3 +5,4 @@ cd mediamtx
 git remote add upstream https://github.com/bluenviron/mediamtx.git
 git fetch --tags upstream
 git pull
+npm install
