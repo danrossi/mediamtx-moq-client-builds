@@ -40,7 +40,7 @@ declare module '@mediamtx/moq/publisher' {
      * @param {EventListenerOrEventListenerObject} callback
      * @returns
      */
-    on(eventName: string, callback: EventListenerOrEventListenerObject): void;
+    on(eventName: string, callback: EventListenerOrEventListenerObject): this;
   }
 
   export interface ErrorDetail {

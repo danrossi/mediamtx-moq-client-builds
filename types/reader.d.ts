@@ -128,7 +128,7 @@ declare module '@mediamtx/moq/reader' {
      * @param {EventListenerOrEventListenerObject} callback
      * @returns
      */
-    on(eventName: string, callback: EventListenerOrEventListenerObject): void;
+    on(eventName: string, callback: EventListenerOrEventListenerObject): this;
   }
 
   /**
