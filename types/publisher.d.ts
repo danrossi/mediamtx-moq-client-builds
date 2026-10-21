@@ -109,9 +109,9 @@ declare module '@mediamtx/moq/publisher' {
   export class MediaMTXMoQPublisher extends EventEmitter {
     /**
      * Create a MediaMTXMoQPublisher.
-     * @param {Conf} conf - configuration.
+     * @param {MediaMTXMoQPublisherConf} conf - configuration.
      */
-    constructor(conf: Conf);
+    constructor(conf: MediaMTXMoQPublisherConf);
 
     /**
      * Start the stream
@@ -122,5 +122,11 @@ declare module '@mediamtx/moq/publisher' {
      * Close the stream
      */
     close(): void;
+
+    /**
+     * Update the config
+     * @param {MediaMTXMoQPublisherConf} conf - configuration.
+     */
+    set config(conf: Partial<MediaMTXMoQPublisherConf>);
   }
 }

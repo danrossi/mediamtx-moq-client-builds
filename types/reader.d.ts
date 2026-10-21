@@ -237,9 +237,9 @@ declare module '@mediamtx/moq/reader' {
   export class MediaMTXMoQReader extends EventEmitter {
     /**
      * Create a MediaMTXMoQReader.
-     * @param {Conf} conf - configuration.
+     * @param {MediaMTXMoQReaderConf} conf - configuration.
      */
-    constructor(conf: Conf);
+    constructor(conf: MediaMTXMoQReaderConf);
 
     /**
      * Unmute the reader.
@@ -275,9 +275,9 @@ declare module '@mediamtx/moq/reader' {
 
     /**
      * Update the config
-     * @param {Conf} conf - configuration.
+     * @param {MediaMTXMoQReaderConf} conf - configuration.
      */
-    set config(conf: Conf);
+    set config(conf: Partial<MediaMTXMoQReaderConf>);
 
     /**
      * Get the current state
