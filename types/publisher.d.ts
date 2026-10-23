@@ -9,6 +9,41 @@ declare module '@mediamtx/moq/publisher' {
    */
 
   /**
+   * @typedef {Object} CatalogTrack
+   * @property {string} name - The track name.
+   * @property {string} packaging - The track packaging.
+   * @property {boolean} isLive - Track live.
+   * @property {string} codec - The track codec.
+   * @property {number} samplerate - The track audio samplerate.
+   */
+
+  /**
+   * @typedef {Object} VideoCatalogTrack
+   * @property {string} name - The track name.
+   * @property {string} packaging - The track packaging.
+   * @property {boolean} isLive - Track live.
+   * @property {string} codec - The track codec.
+   * @property {number} clockrate
+   */
+
+  /**
+   * @typedef {Object} AudioCatalogTrack
+   * @property {string} name - The track name.
+   * @property {string} packaging - The track packaging.
+   * @property {boolean} isLive - Track live.
+   * @property {string} codec - The track codec.
+   * @property {number} samplerate - The track audio samplerate.
+   * @property {number} clockrate
+   * @property {number} channels - the number of channels
+   */
+
+  /**
+   * @typedef {Object} Catalog
+   * @property {number} version - The catalog version.
+   * @property {CatalogTrack[]} tracks - The error message.
+   */
+
+  /**
    * Error event
    * @event MediaMTXMoQPublisher#event:error
    * @type {CustomEvent<ErrorDetail>}
@@ -24,6 +59,19 @@ declare module '@mediamtx/moq/publisher' {
   /**
    * Restarting event
    * @event MediaMTXMoQPublisher#event:restarting
+   * @type {CustomEvent}
+   */
+
+  /**
+   * Catalog data event
+   * @event MediaMTXMoQPublisher#event:catalog
+   * @type {CustomEvent<Catalog>}
+   * @property {Catalog} detail - The catalog data.
+   */
+
+  /**
+   * Publish event
+   * @event MediaMTXMoQPublisher#event:publish
    * @type {CustomEvent}
    */
 
@@ -47,6 +95,25 @@ declare module '@mediamtx/moq/publisher' {
   export interface ErrorDetail {
     code: number;
     message: string;
+  }
+
+  export interface Catalog {
+    version: number;
+    tracks: (VideoCatalogTrack | AudioCatalogTrack)[];
+  }
+
+  export interface CatalogTrack {
+    name: string;
+    packaging: string;
+    isLive: boolean;
+    codec: string;
+  }
+
+  export type VideoCatalogTrack = CatalogTrack;
+
+  export interface AudioCatalogTrack extends CatalogTrack {
+    samplerate: number;
+    channels: number;
   }
 
   /**
