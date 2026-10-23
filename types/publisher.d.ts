@@ -128,5 +128,11 @@ declare module '@mediamtx/moq/publisher' {
      * @param {MediaMTXMoQPublisherConf} conf - configuration.
      */
     set config(conf: Partial<MediaMTXMoQPublisherConf>);
+
+    /**
+     * Set a new media stream
+     * @param {MediaStream} - the media stream
+     */
+    set stream(stream: MediaStream): void;
   }
 }
