@@ -200,6 +200,6 @@ declare module '@mediamtx/moq/publisher' {
      * Set a new media stream
      * @param {MediaStream} - the media stream
      */
-    set stream(stream: MediaStream): void;
+    set stream(stream: MediaStream);
   }
 }

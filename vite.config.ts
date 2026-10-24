@@ -89,7 +89,9 @@ export default defineConfig(({ mode }) => {
     outputOptions: OutputOptions = {
       minify: {
         mangle: true,
-        compress: true,
+        compress: {
+          dropConsole: true,
+        },
       },
     };
 
