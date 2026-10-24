@@ -216,6 +216,7 @@ declare module '@mediamtx/moq/reader' {
    * @property {boolean} autorestart - auto restart the stream on errors.
    * @property {boolean} autoclear - auto clear the render on close.
    * @property {number} retryDelay - the retry delay interval.
+   * @property {number} retryLimit - the retry connection limit.
    */
 
   export interface Conf {
@@ -230,6 +231,7 @@ declare module '@mediamtx/moq/reader' {
     autorestart?: boolean;
     autoclear?: boolean;
     retryDelay?: number;
+    retryLimit?: number;
   }
 
   export type MediaMTXMoQReaderConf = Conf;
