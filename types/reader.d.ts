@@ -244,6 +244,11 @@ declare module '@mediamtx/moq/reader' {
     constructor(conf: MediaMTXMoQReaderConf);
 
     /**
+     * Init the reader and video renderer.
+     */
+    init(): void;
+
+    /**
      * Unmute the reader.
      */
     unmute(): void;
